@@ -4,12 +4,14 @@ import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 export const Container = styled.div`
     width: 100%;
     height: 100px;
-    background-color: gray;
+    background-color: rgba(0,0,0,0);
+    background-color: ${props=>props.nav ? 'rgba(57,6,110,0.3)' : 'rgba(0,0,0,0)'};
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
+    backdrop-filter: blur(${props=>props.nav ? '10px' : '0px'});
 `
 
 export const Wrapper = styled.div`

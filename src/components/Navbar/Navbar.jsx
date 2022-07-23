@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from './../../assets/icons/logo.svg';
 import { Container, LinkButton, LogoImg, LogoMask, NavMask, PhoneIcon, PhoneMask, PhoneText, Wrapper } from './style';
 
 
 
 const Navbar = () => {
+  const [navstyle, setnavstyle] = useState(false);
+
+
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 50) {
+      setnavstyle(true)
+    }else {
+      setnavstyle(false)
+    }
+  };
+
+
+
+  window.addEventListener('scroll', changeNavbarColor);
   return (
-    <Container>
+    <Container nav={navstyle}>
       <Wrapper>
         <LogoMask>
             <LogoImg src={logo} />
